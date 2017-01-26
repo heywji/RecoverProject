@@ -1,0 +1,17 @@
+Switch#conf t
+Switch(config)#ip dhcp pool 1      #定义一个编号为1的DHCP的地址池
+Switch(dhcp-config)#network 192.168.1.0 255.255.255.0   #定义网段
+Switch(dhcp-config)#dns-server 192.168.1.1   #定义DNS服务器
+Switch(dhcp-config)#default-router 192.168.1.1   #定义默认路由，即网关
+Switch(dhcp-config)#exit
+Switch(config)#ip dhcp excluded-address 192.168.1.1 192.168.1.10  #定义排除地址范围
+Switch(config)#int f0/1
+Switch(config-if)#no switchport   #将接口定义为三层口，为了后面可以配IP
+Switch(config-if)#ip add 192.168.1.2 255.255.255.0  #配IP，（要配在排除地址范围内）
+Switch(config-if)#no shut
+Switch(config-if)#exit
+退出后，直接去PT的客户上开DHCP模式就可以得到地址了
+
+说明：
+1、PT没有service dhcp命令，PT里默认是内置了这个功能，不需要打这条命令也开启DHCP
+2、那个要接口是一个要配一个IP地址，且IP要排除地址范围内，否则会重冲突!
