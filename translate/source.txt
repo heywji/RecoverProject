@@ -1,0 +1,16 @@
+About extundelete
+extundelete is a utility that can recover deleted files from an ext3 or ext4 partition. The ext3 and ext4 file systems are the most common default file systems in Linux distributions like Mint, Mageia, or Ubuntu. extundelete uses information stored in the partition's journal to attempt to recover a file that has been deleted from the partition. There is no guarantee that any particular file will be able to be undeleted, so always try to have a good backup system in place, or at least put one in place after recovering your files!
+
+---------------------------------
+
+A tool to investigate an ext3 file system for deleted content and possibly recover it.
+
+This project doesn't have a home page here. You can read more about ext3grep and ext3 in general here.
+
+It is now possible to make a donation using the button near the bottom on that webpage. Thanks!
+
+umount the partition ASAP ; do not mount it again.
+
+If you turned the PC off in panic (and did not umount it), then do NOT start the PC again to "recover" and THEN umount, of course; in that case just work with the unclean image.
+
+Additional information and mailinglist archives can be found here
