@@ -647,6 +647,8 @@ Foremost 支持恢复如下格式：avi, bmp, dll, doc, exe, gif, htm, jar, jpg,
 
 #### 3 -->失败
 
+**文件恢复不存在、MD5校检不匹配。恢复失败**
+
 ![](http://images2015.cnblogs.com/blog/952608/201701/952608-20170128171412534-1583295915.png)
 
 ```
@@ -822,7 +824,7 @@ Copyright 2012 CorvusCorax
 | 恢复时长  |          2s           |           1s            |                 1s                  | 1s                    |
 | 界面支持  |          CLI          |           CLI           |                 CLI                 | GLI                   |
 | 恢复程度  |         100%          |          100%           |                100%                 | 100%                  |
-| 程序优势  |     支持了ext3和ext4      | 输出信息比较完整具体<br>对专业人士帮助较大 |    支持格式多<br>输出信息规范<br>前俩者的加强升级版     | 全平台<br>字符界面<br>新手帮助大  |
+| 程序优势  |     操作简单<br>支持了ext3和ext4      | 输出信息具体<br>恢复效果较好 |    支持格式多<br>输出信息规范<br>前俩者的加强升级版     | 全平台<br>字符界面<br>对新手友好  |
 | 总体评价  | :heart::heart::heart: |     :heart::heart:      | :heart::heart::heart::heart::heart: | :heart::heart::heart: |
 
 
