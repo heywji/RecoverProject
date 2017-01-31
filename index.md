@@ -2,7 +2,7 @@
 
 <img style="vertical-align: middle;" src="http://images2015.cnblogs.com/blog/952608/201701/952608-20170125120304628-720092779.png" width="800px">
 
-在 GUI 中使用  `shift + delete`  组合键或是 CLI 下使用 ``rm -rf`` 删除选项，这个文件并没有从硬盘（或是其它存储设备）上彻底销毁。当它文件被删除以后，``inode`` 的数据指针部分被清零，仅仅是从系统的目录结构中被移除，但是这个文件仍然存在你磁盘中的某个 `block` 物理位置上。（ ``ls -li`` 或 ``stat`` 查询一个文件所对应的 [inode](https://en.wikipedia.org/wiki/Inode) 的元信息数据。 ）。
+在 GUI 中使用  `shift + delete`  组合键或是 CLI 下使用 ``rm -rf`` 删除选项，这个文件并没有从硬盘（或是其它存储设备）上彻底销毁。当它"被删除"以后，OS 将 ``inode`` 的数据指针部分清零，也仅仅是从系统的目录结构中被移除，但是这个文件仍然存在你磁盘中的某个 `block` 物理位置上。（ ``ls -li`` 或 ``stat`` 查询一个文件所对应的 [inode](https://en.wikipedia.org/wiki/Inode) 的元信息数据。 ）。
 
 注意：**[独立硬盘冗余阵列](https://en.wikipedia.org/wiki/RAID)**（**RAID**, **R**edundant **A**rray of **I**ndependent **D**isks）损坏或数据丢失，不在本次范围。
 
@@ -336,7 +336,7 @@ ext3grep /dev/sdb1 --restore-all
 
 ###### 目录
 
-<font color=red>ext3grep 并没有提供恢复目录选项（也许我没发现），但是可以曲线救国法使用before&after进行文件夹恢复<br>另外计算秒数的 date 命令可以这么使用```$(date -d "-1 hour" +%s) ```</font>
+<font color=red>ext3grep 并没有像 "extundelete" 一样提供恢复目录选项（也许我没发现），所以恢复目录可以曲线救国法使用"before&after"进行文件夹恢复<br>另外在需要计算秒数的 ```date``` 命令可以这么使用```$(date -d "-1 hour" +%s) ```</font>
 
 ![](http://images2015.cnblogs.com/blog/952608/201701/952608-20170128014016581-1703252120.png)
 
@@ -598,7 +598,7 @@ a524bb0892750dfe2c2a91c819bf9861  /mnt/testdisk/testdisk123123
 ###### 目录
 
 ![](http://images2015.cnblogs.com/blog/952608/201701/952608-20170131012643308-2027769970.gif)
-![](http://images2015.cnblogs.com/blog/952608/201701/952608-20170131012646792-1332670690.png)
+![](http://images2015.cnblogs.com/blog/952608/201701/952608-20170131125230464-635911013.png)
 
 
 
